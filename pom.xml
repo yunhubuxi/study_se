@@ -12,6 +12,9 @@
         <module>pattern</module>
         <module>threads</module>
         <module>algorithm</module>
+        <module>pattern</module>
+        <module>concurrency</module>
+        <module>algorithm</module>
     </modules>
 
 
