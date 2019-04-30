@@ -12,6 +12,7 @@
         <module>pattern</module>
         <module>algorithm</module>
         <module>concurrency</module>
+        <module>trial</module>
     </modules>
     <build>
         <plugins>
