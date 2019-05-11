@@ -13,7 +13,7 @@
         <module>algorithm</module>
         <module>concurrency</module>
         <module>trial</module>
-        <module>zookeeper</module>
+        <module>zookeeper_test</module>
     </modules>
     <build>
         <plugins>
