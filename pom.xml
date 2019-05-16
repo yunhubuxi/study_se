@@ -14,6 +14,7 @@
         <module>concurrency</module>
         <module>trial</module>
         <module>zookeeper_test</module>
+        <module>jdbc_test</module>
     </modules>
     <build>
         <plugins>
