@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的
+例如namespace="me.gacl.mapping.userMapper"就是me.gacl.mapping(包名)+userMapper(userMapper.xml文件去除后缀)
+ -->
+<mapper namespace="mybatis.OrdersMapperCustom">
+
+    <!--
+         订单查询关联用户的resultMap
+        将整个查询的结果映射到cn.higgin.mybatis.po.Orders中
+     -->
+    <resultMap type="mybatis.onttomany.Orders" id="OrdersUserResultMap">
+        <!-- 配置订单的映射信息 -->
+        <!--
+            id:指定查询列中的唯一标识，订单信息中的唯一标识，若有多个列组成唯一标识，需配置多个id
+            column: 订单信息的唯一标识列
+            property: 订单信息的唯一标识列所映射到的 Orders的对应的属性
+         -->
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="number" property="number" />
+        <result column="createtime" property="createtime"/>
+        <result column="note" property="note" />
+
+        <!-- 配置映射的关联的用户信息 -->
+        <!-- association：用于映射关联查询单个对象的信息
+            property：要将关联查询的用户信息映射到Orders中的对应属性
+         -->
+        <association property="user" javaType="mybatis.onttomany.User">
+            <!--
+                id：关联查询用户的唯一标识
+                column：指定唯一标识用户信息的列
+                javaType：映射到user的对应属性
+             -->
+            <id column="user_id" property="id"/>
+            <result column="username" property="username"/>
+            <result column="sex" property="sex"/>
+            <result column="address" property="address"/>
+        </association>
+    </resultMap>
+
+
+    <!-- 订单及订单明细的resultType
+        使用extends继承OrdersUserResultMap中的信息，无需在其中配置订单和用户的信息
+    -->
+    <resultMap type="mybatis.onttomany.Orders" id="OrdersAndOrderDetailResultMap"
+               extends="OrdersUserResultMap">
+        <!-- 1.订单信息（从继承的OrdersUserResultMap中获取） -->
+
+        <!-- 2.用户信息（从继承的OrdersUserResultMap中获取） -->
+
+        <!-- 订单明细信息
+            一个订单关联查询出了多条明细，要使用collection进行映射
+            collection:对关联查询到多条记录映射到集合对象中
+            property: 将关联查询到多条记录映射到cn.higgin.mybatis.po.Orders的对应属性
+            ofType: 指定映射到list集合属性中pojo的类型，在[Orders.java]中的 private List<Orderdetail> orderdetails;
+         -->
+        <collection property="orderdetails" ofType="mybatis.onttomany.Orderdetail">
+            <!-- id:订单明细唯一标识
+                property:要将订单明细的唯一标识映射到cn.higgin.mybatis.po.Orderdetail的对应属性 -->
+            <id column="orderdetail_id" property="id"/>
+            <result column="items_id" property="id"/>
+            <result column="items_num" property="itemsNum"/>
+            <result column="orders_id" property="ordersId"/>
+        </collection>
+    </resultMap>
+
+    <!-- 查询订单关联查询用户信息，使用resultMap -->
+    <select id="findOrdersAndOrderDetailResultMap" resultMap="OrdersAndOrderDetailResultMap">
+        SELECT
+            orders.*,
+            USER.username,
+            USER.sex,
+            USER.address,
+            orderdetail.items_id,
+            orderdetail.items_num,
+            orderdetail.orders_id
+        FROM
+            orders,USER,orderdetail
+        WHERE
+            orders.user_id=user.id AND orderdetail.orders_id=orders.id
+    </select>
+
+</mapper>

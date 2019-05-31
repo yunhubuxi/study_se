@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的
+例如namespace="me.gacl.mapping.userMapper"就是me.gacl.mapping(包名)+userMapper(userMapper.xml文件去除后缀)
+ -->
+<mapper namespace="mybatis.OrdersMapperCustom">
+
+    <resultMap type="mybatis.onttomany.Orders" id="OrdersUserResultMap">
+
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="number" property="number" />
+        <result column="createtime" property="createtime"/>
+        <result column="note" property="note" />
+
+        <association property="user" javaType="mybatis.onttomany.User">
+
+            <id column="user_id" property="id"/>
+            <result column="username" property="username"/>
+            <result column="sex" property="sex"/>
+            <result column="address" property="address"/>
+        </association>
+    </resultMap>
+
+
+    <resultMap type="mybatis.onttomany.Orders" id="OrdersAndOrderDetailResultMap"
+               extends="OrdersUserResultMap">
+        <collection property="orderdetails" ofType="mybatis.onttomany.Orderdetail">
+
+            <id column="orderdetail_id" property="id"/>
+            <result column="items_id" property="id"/>
+            <result column="items_num" property="itemsNum"/>
+            <result column="orders_id" property="ordersId"/>
+        </collection>
+    </resultMap>
+
+    <!-- 查询订单关联查询用户信息，使用resultMap -->
+    <select id="findOrdersAndOrderDetailResultMap" resultMap="OrdersAndOrderDetailResultMap">
+        SELECT
+            orders.*,
+            orderdetail.items_id,
+            orderdetail.items_num,
+            orderdetail.orders_id
+        FROM
+            orders,orderdetail
+        WHERE
+            orders.user_id= 1 AND orderdetail.orders_id=orders.id
+    </select>
+
+</mapper>
