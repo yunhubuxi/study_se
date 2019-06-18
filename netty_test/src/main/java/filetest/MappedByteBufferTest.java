@@ -1,5 +1,8 @@
 package filetest;
 
+import nio.DirectMemory;
+import sun.nio.ch.DirectBuffer;
+
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
@@ -18,11 +21,13 @@ import java.util.concurrent.TimeUnit;
  */
 public class MappedByteBufferTest {
     public static void main(String[] args) throws Exception {
+//        TimeUnit.SECONDS.sleep(20);
         long fileSize = 1024 * 1024 * 1024;
         System.out.println(Integer.MAX_VALUE);
         System.out.println(Long.MAX_VALUE);
         System.out.println(fileSize);
         File file = new File("D:\\ProjectDoc\\abcd");
+        System.out.println("开始分配内存了");
         FileChannel fileChannel = new RandomAccessFile(file, "rw").getChannel();
 //        for (int i = 0; i < 10; i++) {
 //            fileSize = fileSize /2;
@@ -30,9 +35,13 @@ public class MappedByteBufferTest {
 //            fileChannel.map(FileChannel.MapMode.READ_WRITE, 0, fileSize);
 //        }
         MappedByteBuffer mappedByteBuffer = fileChannel.map(FileChannel.MapMode.READ_WRITE, 0, Integer.MAX_VALUE);
+        System.out.println(mappedByteBuffer.capacity());
+
         byte a = 2;
         for (int i = 0; i < 1000000; i++) {
             mappedByteBuffer.put(a);
+
+
         }
         TimeUnit.MINUTES.sleep(5);
 //        mappedByteBuffer.get();
