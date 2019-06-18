@@ -40,4 +40,14 @@ public class Orderdetail {
     public void setItemsNum(Integer itemsNum) {
         this.itemsNum = itemsNum;
     }
+
+    @Override
+    public String toString() {
+        return "Orderdetail{" +
+                "id=" + id +
+                ", ordersId=" + ordersId +
+                ", itemsId=" + itemsId +
+                ", itemsNum=" + itemsNum +
+                '}';
+    }
 }
