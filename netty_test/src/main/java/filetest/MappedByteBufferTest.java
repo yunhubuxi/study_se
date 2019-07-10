@@ -40,8 +40,6 @@ public class MappedByteBufferTest {
         byte a = 2;
         for (int i = 0; i < 1000000; i++) {
             mappedByteBuffer.put(a);
-
-
         }
         TimeUnit.MINUTES.sleep(5);
 //        mappedByteBuffer.get();

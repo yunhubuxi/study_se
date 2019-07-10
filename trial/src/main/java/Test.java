@@ -1,8 +1,11 @@
+import sun.misc.Unsafe;
+
+import java.nio.ByteBuffer;
+
 public class Test {
     public static void main(String[] args) {
         TestA a = new TestA();
-        System.out.println(a.getConfigStorePath());
-        System.out.println(a.getProductEnvName());
-        System.out.println(a.aaa);
+        Unsafe unsafe = Unsafe.getUnsafe();
+        ByteBuffer b = ByteBuffer.allocateDirect(500);
     }
 }

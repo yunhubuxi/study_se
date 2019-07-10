@@ -6,7 +6,7 @@ import java.util.List;
 public class Orders {
 
     private Integer id;
-    private Integer userId;
+    private DemandSourceEnum userId;
     private String number;
     private Date createtime;
     private String note;
@@ -23,11 +23,11 @@ public class Orders {
         this.id = id;
     }
 
-    public Integer getUserId() {
+    public DemandSourceEnum getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(DemandSourceEnum userId) {
         this.userId = userId;
     }
 
