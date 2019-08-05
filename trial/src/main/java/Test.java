@@ -8,7 +8,7 @@ public class Test {
         Unsafe unsafe = Unsafe.getUnsafe();
         ByteBuffer b = ByteBuffer.allocateDirect(500);
     }
-    class TestB{
+    class TestB {
         String aa;
     }
 }

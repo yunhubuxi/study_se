@@ -16,6 +16,7 @@
         <module>zookeeper_test</module>
         <module>jdbc_test</module>
         <module>netty_test</module>
+        <module>dubbo_test</module>
     </modules>
     <build>
         <plugins>

@@ -3,5 +3,6 @@ public class TestB {
         Long a = new Long(20);
         String s = a.toString();
         System.out.println(s);
+        Integer.valueOf(2);
     }
 }
