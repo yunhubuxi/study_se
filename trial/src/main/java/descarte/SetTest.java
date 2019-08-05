@@ -9,6 +9,10 @@ public class SetTest {
         set1.add("2");
         set1.add("3");
         set1.add("4");
+        System.out.println(set1.add("1"));
+
+
+
         Set<String> set2 = new HashSet<>();
         set2.add("4");
         set2.add("3");
