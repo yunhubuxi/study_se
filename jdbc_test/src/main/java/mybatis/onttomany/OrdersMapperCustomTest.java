@@ -23,16 +23,15 @@ public class OrdersMapperCustomTest {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        //创建代理对象
-//        OrdersMapperCustom ordersMapperCustom = sqlSession.getMapper(OrdersMapperCustom.class);
-
+        //创建代理对象，即获取映射器
+        OrdersMapperCustom ordersMapperCustom = sqlSession.getMapper(OrdersMapperCustom.class);
         //调用mapper的方法
-//        List<Orders> list = ordersMapperCustom.findOrdersAndOrderDetailResultMap();
+        List<Orders> list_1 = ordersMapperCustom.findOrdersAndOrderDetailResultMap();
 
         String statement = "mybatis.OrdersMapperCustom.findOrdersAndOrderDetailResultMap";
-        List<Orders> list = sqlSession.selectList(statement);
+        List<Orders> list_2 = sqlSession.selectList(statement);
         for (Orders order:
-             list) {
+             list_2) {
             System.out.println(order);
         }
 
