@@ -23,6 +23,7 @@ public class OrdersMapperCustomTest {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         SqlSession sqlSession = sqlSessionFactory.openSession();
+
         //创建代理对象，即获取映射器
         OrdersMapperCustom ordersMapperCustom = sqlSession.getMapper(OrdersMapperCustom.class);
         //调用mapper的方法
