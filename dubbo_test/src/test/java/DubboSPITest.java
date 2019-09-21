@@ -1,5 +1,5 @@
 import com.alibaba.dubbo.common.extension.ExtensionLoader;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import spi.Robot;
 
 public class DubboSPITest {
