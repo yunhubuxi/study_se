@@ -8,5 +8,282 @@ public class TestJson {
         Object object = JSONObject.toJSON(test);
         System.out.println(test);
         System.out.println(object.toString());
+
+        String aa = "{\n" +
+            "    \t\"materialSpecIds\":[\"1381068344152320\",\"1381068830544128\"],\n" +
+            "        \"orgId\": \"1389317053403392\",\n" +
+            "        \"id\": 1393509907960064,\n" +
+            "        \"pubts\": \"2019-09-12 10:27:10\",\n" +
+            "        \"code\": \"a002\",\n" +
+            "        \"name\": \"材料a002\",\n" +
+            "        \"manageClass\": 1392417797083392,\n" +
+            "        \"productClass\": 1381066765635840,\n" +
+            "        \"productTemplate\": 1389371013370112,\n" +
+            "        \"platFormStaus\": 1,\n" +
+            "        \"realProductAttribute\": 1,\n" +
+            "        \"realProductAttributeType\": 1,\n" +
+            "        \"unitUseType\": 2,\n" +
+            "        \"unit\": 1381139365204224,\n" +
+            "        \"dimensionCode\": \"http://u8c3-upmall.daily.app.yyuap.com/detail?goods_id=1393509907960064&wid=#!/detail?goods_id=1393509907960064\",\n" +
+            "        \"time\": {\n" +
+            "            \"id\": 1393509907960065,\n" +
+            "            \"productId\": 1393509907960064,\n" +
+            "            \"productApplyRangeId\": 1393509911367936,\n" +
+            "            \"iControlTime\": false,\n" +
+            "            \"ControlTimeType\": 0,\n" +
+            "            \"dateRange\": [\n" +
+            "                null,\n" +
+            "                null\n" +
+            "            ],\n" +
+            "            \"tenant\": 1375529938522368\n" +
+            "        },\n" +
+            "        \"define\": {\n" +
+            "            \"productId\": 1393509907960064,\n" +
+            "            \"id\": 1393544834912512,\n" +
+            "            \"tenant\": 1375529938522368\n" +
+            "        },\n" +
+            "        \"productBarCodes\": [],\n" +
+            "        \"productspecitems\": [\n" +
+            "            {\n" +
+            "                \"specValue\": \"L\",\n" +
+            "                \"iSpecId\": 1381068344152320,\n" +
+            "                \"lsSpecItems_id\": 1381068344152321,\n" +
+            "                \"iOrder\": 0,\n" +
+            "                \"id\": 1393544828080388,\n" +
+            "                \"productId\": 1393509907960064,\n" +
+            "                \"tenant\": 1375529938522368\n" +
+            "            },\n" +
+            "            {\n" +
+            "                \"specValue\": \"M \",\n" +
+            "                \"iSpecId\": 1381068344152320,\n" +
+            "                \"lsSpecItems_id\": 1381068344152322,\n" +
+            "                \"iOrder\": 1,\n" +
+            "                \"id\": 1393544828080389,\n" +
+            "                \"productId\": 1393509907960064,\n" +
+            "                \"tenant\": 1375529938522368\n" +
+            "            },\n" +
+            "            {\n" +
+            "                \"specValue\": \"棉料\",\n" +
+            "                \"iSpecId\": 1381068830544128,\n" +
+            "                \"lsSpecItems_id\": 1381068830544129,\n" +
+            "                \"iOrder\": 2,\n" +
+            "                \"id\": 1393544828080390,\n" +
+            "                \"productId\": 1393509907960064,\n" +
+            "                \"tenant\": 1375529938522368\n" +
+            "            },\n" +
+            "            {\n" +
+            "                \"specValue\": \"白\",\n" +
+            "                \"iSpecId\": 1381067868066048,\n" +
+            "                \"lsSpecItems_id\": 1381067868066049,\n" +
+            "                \"iOrder\": 3,\n" +
+            "                \"id\": 1393544828080391,\n" +
+            "                \"productId\": 1393509907960064,\n" +
+            "                \"tenant\": 1375529938522368\n" +
+            "            }\n" +
+            "        ],\n" +
+            "        \"productskus\": [\n" +
+            "            {\n" +
+            "                \"productSKUDetail\": {\n" +
+            "                    \"stopstatus\": false,\n" +
+            "                    \"ustatus\": false,\n" +
+            "                    \"status\": false,\n" +
+            "                    \"batchPrice\": 0,\n" +
+            "                    \"markPrice\": 0,\n" +
+            "                    \"salePrice\": 0,\n" +
+            "                    \"fMarketPrice\": 0,\n" +
+            "                    \"fPrimeCosts\": 0,\n" +
+            "                    \"saled\": false,\n" +
+            "                    \"mnemonicCode\": \"CLa002\",\n" +
+            "                    \"fLowestMarkPrice\": 0,\n" +
+            "                    \"shortName\": \"材料a002\",\n" +
+            "                    \"fNoTaxCostPrice\": 0,\n" +
+            "                    \"id\": 1393544828080385,\n" +
+            "                    \"skuId\": 1393544828080384,\n" +
+            "                    \"productId\": 1393509907960064,\n" +
+            "                    \"productApplyRangeId\": 1393509911367936,\n" +
+            "                    \"tenant\": 1375529938522368\n" +
+            "                },\n" +
+            "                \"hasDefaultInit\": true,\n" +
+            "                \"freex1\": \"L\",\n" +
+            "                \"freex2\": \"棉料\",\n" +
+            "                \"freex3\": \"白\",\n" +
+            "                \"specIds\": \"1381068344152321;1381068830544129;1381067868066049\",\n" +
+            "                \"specs\": \"尺码:L;材质:棉料;颜色:白;\",\n" +
+            "                \"isShow\": true,\n" +
+            "                \"index\": \"0\",\n" +
+            "                \"freeidx1\": 1381068344152320,\n" +
+            "                \"freeidx1_Name\": \"尺码\",\n" +
+            "                \"freeidx2\": 1381068830544128,\n" +
+            "                \"freeidx2_Name\": \"材质\",\n" +
+            "                \"freeidx3\": 1381067868066048,\n" +
+            "                \"freeidx3_Name\": \"颜色\",\n" +
+            "                \"name\": \"材料a002\",\n" +
+            "                \"id\": 1393544828080384,\n" +
+            "                \"productId\": 1393509907960064,\n" +
+            "                \"productSKUSpecItems\": [\n" +
+            "                    {\n" +
+            "                        \"specItemId\": 1381067868066049,\n" +
+            "                        \"specId\": 1381067868066048,\n" +
+            "                        \"productId\": 1393509907960064,\n" +
+            "                        \"skuId\": 1393544828080384,\n" +
+            "                        \"id\": 1393544828539136,\n" +
+            "                        \"tenant\": 1375529938522368\n" +
+            "                    },\n" +
+            "                    {\n" +
+            "                        \"specItemId\": 1381068344152321,\n" +
+            "                        \"specId\": 1381068344152320,\n" +
+            "                        \"productId\": 1393509907960064,\n" +
+            "                        \"skuId\": 1393544828080384,\n" +
+            "                        \"id\": 1393544828539137,\n" +
+            "                        \"tenant\": 1375529938522368\n" +
+            "                    },\n" +
+            "                    {\n" +
+            "                        \"specItemId\": 1381068830544129,\n" +
+            "                        \"specId\": 1381068830544128,\n" +
+            "                        \"productId\": 1393509907960064,\n" +
+            "                        \"skuId\": 1393544828080384,\n" +
+            "                        \"id\": 1393544828539138,\n" +
+            "                        \"tenant\": 1375529938522368\n" +
+            "                    }\n" +
+            "                ],\n" +
+            "                \"specNames\": \"尺码:L;材质:棉料;颜色:白\",\n" +
+            "                \"code\": \"a0020001\",\n" +
+            "                \"isSKU\": 1,\n" +
+            "                \"tenant\": 1375529938522368\n" +
+            "            },\n" +
+            "            {\n" +
+            "                \"productSKUDetail\": {\n" +
+            "                    \"stopstatus\": false,\n" +
+            "                    \"ustatus\": false,\n" +
+            "                    \"status\": false,\n" +
+            "                    \"batchPrice\": 0,\n" +
+            "                    \"markPrice\": 0,\n" +
+            "                    \"salePrice\": 0,\n" +
+            "                    \"fMarketPrice\": 0,\n" +
+            "                    \"fPrimeCosts\": 0,\n" +
+            "                    \"saled\": false,\n" +
+            "                    \"mnemonicCode\": \"CLa002\",\n" +
+            "                    \"fLowestMarkPrice\": 0,\n" +
+            "                    \"shortName\": \"材料a002\",\n" +
+            "                    \"fNoTaxCostPrice\": 0,\n" +
+            "                    \"id\": 1393544828080387,\n" +
+            "                    \"skuId\": 1393544828080386,\n" +
+            "                    \"productId\": 1393509907960064,\n" +
+            "                    \"productApplyRangeId\": 1393509911367936,\n" +
+            "                    \"tenant\": 1375529938522368\n" +
+            "                },\n" +
+            "                \"hasDefaultInit\": true,\n" +
+            "                \"freex1\": \"M \",\n" +
+            "                \"freex2\": \"棉料\",\n" +
+            "                \"freex3\": \"白\",\n" +
+            "                \"specIds\": \"1381068344152322;1381068830544129;1381067868066049\",\n" +
+            "                \"specs\": \"尺码:M ;材质:棉料;颜色:白;\",\n" +
+            "                \"isShow\": true,\n" +
+            "                \"index\": \"1\",\n" +
+            "                \"freeidx1\": 1381068344152320,\n" +
+            "                \"freeidx1_Name\": \"尺码\",\n" +
+            "                \"freeidx2\": 1381068830544128,\n" +
+            "                \"freeidx2_Name\": \"材质\",\n" +
+            "                \"freeidx3\": 1381067868066048,\n" +
+            "                \"freeidx3_Name\": \"颜色\",\n" +
+            "                \"name\": \"材料a002\",\n" +
+            "                \"id\": 1393544828080386,\n" +
+            "                \"productId\": 1393509907960064,\n" +
+            "                \"productSKUSpecItems\": [\n" +
+            "                    {\n" +
+            "                        \"specItemId\": 1381067868066049,\n" +
+            "                        \"specId\": 1381067868066048,\n" +
+            "                        \"productId\": 1393509907960064,\n" +
+            "                        \"skuId\": 1393544828080386,\n" +
+            "                        \"id\": 1393544828686592,\n" +
+            "                        \"tenant\": 1375529938522368\n" +
+            "                    },\n" +
+            "                    {\n" +
+            "                        \"specItemId\": 1381068344152322,\n" +
+            "                        \"specId\": 1381068344152320,\n" +
+            "                        \"productId\": 1393509907960064,\n" +
+            "                        \"skuId\": 1393544828080386,\n" +
+            "                        \"id\": 1393544828686593,\n" +
+            "                        \"tenant\": 1375529938522368\n" +
+            "                    },\n" +
+            "                    {\n" +
+            "                        \"specItemId\": 1381068830544129,\n" +
+            "                        \"specId\": 1381068830544128,\n" +
+            "                        \"productId\": 1393509907960064,\n" +
+            "                        \"skuId\": 1393544828080386,\n" +
+            "                        \"id\": 1393544828686594,\n" +
+            "                        \"tenant\": 1375529938522368\n" +
+            "                    }\n" +
+            "                ],\n" +
+            "                \"specNames\": \"尺码:M ;材质:棉料;颜色:白\",\n" +
+            "                \"code\": \"a0020002\",\n" +
+            "                \"isSKU\": 1,\n" +
+            "                \"tenant\": 1375529938522368\n" +
+            "            }\n" +
+            "        ],\n" +
+            "        \"productApplyRangeId\": \"1393509911367936\",\n" +
+            "        \"isCreator\": true,\n" +
+            "        \"isApplied\": true,\n" +
+            "        \"hasSpecs\": true,\n" +
+            "        \"isStop\": false,\n" +
+            "        \"modifier\": \"shixj3\",\n" +
+            "        \"modifierId\": 1375529938768128,\n" +
+            "        \"modifyTime\": \"2019-09-12 10:27:06\",\n" +
+            "        \"modifyDate\": \"2019-09-12 10:27:06\",\n" +
+            "        \"tenant\": 1375529938522368,\n" +
+            "        \"detail!businessAttribute\": \"1,7,3\",\n" +
+            "        \"detail!saleChannel\": \"1,2\",\n" +
+            "        \"detail!productApplyRangeId\": 1393509911367936,\n" +
+            "        \"detail!id\": 1393509907960064,\n" +
+            "        \"detail!purchaseUnit\": 1381139365204224,\n" +
+            "        \"detail!stockUnit\": 1381139365204224,\n" +
+            "        \"detail!batchPriceUnit\": 1381139365204224,\n" +
+            "        \"detail!batchUnit\": 1381139365204224,\n" +
+            "        \"detail!onlineUnit\": 1381139365204224,\n" +
+            "        \"detail!offlineUnit\": 1381139365204224,\n" +
+            "        \"detail!requireUnit\": 1381139365204224,\n" +
+            "        \"detail!isDisplayPrice\": true,\n" +
+            "        \"detail!stopstatus\": false,\n" +
+            "        \"detail!iStatus\": false,\n" +
+            "        \"detail!iUOrderStatus\": false,\n" +
+            "        \"detail!canSale\": true,\n" +
+            "        \"detail!isBatchManage\": false,\n" +
+            "        \"detail!isExpiryDateManage\": false,\n" +
+            "        \"detail!isSerialNoManage\": false,\n" +
+            "        \"detail!valueManageType\": 0,\n" +
+            "        \"detail!checkByCost\": false,\n" +
+            "        \"detail!checkByBatch\": false,\n" +
+            "        \"detail!isCheckFree\": 0,\n" +
+            "        \"detail!saleStyle\": \"1\",\n" +
+            "        \"detail!enableSubscribe\": false,\n" +
+            "        \"detail!enableDeposit\": false,\n" +
+            "        \"detail!depositDealPayType\": 0,\n" +
+            "        \"detail!enablemodifyDeposit\": false,\n" +
+            "        \"detail!depositPayType\": 0,\n" +
+            "        \"detail!serviceDurationUnit\": 1,\n" +
+            "        \"detail!canOrder\": false,\n" +
+            "        \"detail!onlyOrder\": false,\n" +
+            "        \"detail!orderAdvanceTime\": 0,\n" +
+            "        \"detail!iEnableCyclePurchase\": false,\n" +
+            "        \"detail!isAllArea\": false,\n" +
+            "        \"detail!iEnableEcontract\": false,\n" +
+            "        \"detail!isRecommend\": false,\n" +
+            "        \"detail!displayName\": \"材料a002\",\n" +
+            "        \"detail!allowStorePurchase\": true,\n" +
+            "        \"detail!isSaleInOfflineStore\": true,\n" +
+            "        \"detail!isPriceChangeAllowed\": false,\n" +
+            "        \"detail!isOfflineStoreOrder\": true,\n" +
+            "        \"detail!isOfflineStoreReturn\": true,\n" +
+            "        \"detail!retailPriceDimension\": 1,\n" +
+            "        \"detail!isProcess\": false,\n" +
+            "        \"detail!processType\": 0,\n" +
+            "        \"detail!isMaterial\": false,\n" +
+            "        \"detail!isWeight\": false,\n" +
+            "        \"detail!saleChannelOfOnlineBatch\": true,\n" +
+            "        \"detail!saleChannelOfOnlineRetail\": true,\n" +
+            "        \"detail!saleChannelOfOfflineRetail\": false,\n" +
+            "        \"detail!saleChannelOfDistribution\": false,\n" +
+            "        \"detail!tenant\": 1375529938522368\n" +
+            "    }";
     }
 }

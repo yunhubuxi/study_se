@@ -1,6 +1,5 @@
 package descarte;
 
-import javax.print.attribute.standard.MediaSize;
 import java.util.*;
 
 public class ListTest {
