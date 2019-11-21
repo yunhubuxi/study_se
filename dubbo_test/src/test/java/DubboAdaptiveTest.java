@@ -2,7 +2,6 @@ import com.alibaba.dubbo.common.URL;
 import com.alibaba.dubbo.common.extension.ExtensionLoader;
 import org.junit.Test;
 import spi.adaptive.AdaptiveExt1;
-import spi.adaptive.AdaptiveExt1;
 
 /**
  * 从上面的几个测试用例，可以得到下面的结论：
