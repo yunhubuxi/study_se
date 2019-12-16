@@ -1,9 +1,18 @@
 package descarte;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 public class ListTest {
     public static void main(String[] args) {
+
+        BigDecimal a = new BigDecimal(12);
+        BigDecimal b = new BigDecimal(15);
+        BigDecimal c  = a.add(b);
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+
         List<Long> longs = new ArrayList<>();
         longs.add(12L);
         longs.add(14L);

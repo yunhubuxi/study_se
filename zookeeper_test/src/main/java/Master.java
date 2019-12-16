@@ -6,8 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Master implements Watcher {
 
-    ZooKeeper zooKeeper;
-    String hostPort;
+    private ZooKeeper zooKeeper;
+    private String hostPort;
 
     @Override
     public void process(WatchedEvent watchedEvent) {
