@@ -17,6 +17,7 @@
         <module>jdbc_test</module>
         <module>netty_test</module>
         <module>dubbo_test</module>
+        <module>uml</module>
     </modules>
     <build>
         <plugins>
