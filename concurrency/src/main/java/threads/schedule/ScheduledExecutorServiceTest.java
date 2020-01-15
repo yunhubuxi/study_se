@@ -1,7 +1,6 @@
 package threads.schedule;
 
 
-import java.sql.Time;
 import java.time.LocalTime;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -11,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class ScheduledExecutorServiceTest {
     public static void main(String[] args) {
 //        Executors.newScheduledThreadPool(5);
-        final ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5,new ThreadFactory() {
+        final ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5, new ThreadFactory() {
             @Override
             public Thread newThread(Runnable r) {
                 return new Thread(r, "MQClientFactoryScheduledThread");
@@ -23,7 +22,7 @@ public class ScheduledExecutorServiceTest {
             @Override
             public void run() {
                 try {
-                    System.out.println("5秒执行一次"+ LocalTime.now().toString()+Thread.currentThread().getName());
+                    System.out.println("5秒执行一次" + LocalTime.now().toString() + Thread.currentThread().getName());
 
                 } catch (Exception e) {
                 }
@@ -35,7 +34,7 @@ public class ScheduledExecutorServiceTest {
             @Override
             public void run() {
                 try {
-                    System.out.println("20秒执行一次"+ LocalTime.now().toString()+Thread.currentThread().getName());
+                    System.out.println("20秒执行一次" + LocalTime.now().toString() + Thread.currentThread().getName());
                     TimeUnit.SECONDS.sleep(10);
                 } catch (Exception e) {
                 }
@@ -47,7 +46,7 @@ public class ScheduledExecutorServiceTest {
             @Override
             public void run() {
                 try {
-                    System.out.println("10秒执行一次"+ LocalTime.now().toString()+Thread.currentThread().getName());
+                    System.out.println("10秒执行一次" + LocalTime.now().toString() + Thread.currentThread().getName());
                 } catch (Exception e) {
                 }
             }
@@ -58,7 +57,7 @@ public class ScheduledExecutorServiceTest {
             @Override
             public void run() {
                 try {
-                    System.out.println("1分钟执行一次"+ LocalTime.now().toString()+Thread.currentThread().getName());
+                    System.out.println("1分钟执行一次" + LocalTime.now().toString() + Thread.currentThread().getName());
                 } catch (Exception e) {
                 }
             }
