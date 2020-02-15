@@ -1,7 +1,6 @@
 package threads.schedule;
 
 
-import java.sql.Time;
 import java.time.LocalTime;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
