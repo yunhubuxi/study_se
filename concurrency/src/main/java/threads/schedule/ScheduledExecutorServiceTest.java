@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit;
 
 public class ScheduledExecutorServiceTest {
     public static void main(String[] args) {
-//        Executors.newScheduledThreadPool(5);
         final ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5,new ThreadFactory() {
             @Override
             public Thread newThread(Runnable r) {
