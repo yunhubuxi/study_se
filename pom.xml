@@ -15,8 +15,11 @@
         <module>trial</module>
         <module>zookeeper_test</module>
         <module>jdbc_test</module>
-        <module>netty_test</module>
+        <module>nio_test</module>
         <module>dubbo_test</module>
+        <module>uml</module>
+        <module>utils</module>
+        <module>mybatis_test</module>
     </modules>
     <build>
         <plugins>

@@ -1,5 +1,3 @@
-package downtest;
-
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -10,7 +8,7 @@ import java.util.concurrent.Executors;
 public class DownFile {
 
     public static void main(String[] args) throws Exception {
-//        downLoadFromUrl("http://172.20.55.84:8099/download?filepath=/UFSoft.U8.OrderCenter.Portal.exe","","D:\\test.txt","");
+        // downLoadFromUrl("http://172.20.55.84:8099/download?filepath=/UFSoft.U8.OrderCenter.Portal.exe", "", "D:\\test.txt", "");
         downLoadFromUrl("http://localhost:8099/download?filepath=/UFSoft.U8.OrderCenter.Portal.exe", "", "D:\\test.txt", "");
         Executor executor = Executors.newCachedThreadPool();
         for (int i = 0; i < 100; i++) {
@@ -25,8 +23,6 @@ public class DownFile {
                 }
             });
         }
-
-
     }
 
     /**
