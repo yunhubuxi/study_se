@@ -20,6 +20,7 @@
         <module>uml</module>
         <module>utils</module>
         <module>mybatis_test</module>
+        <module>junit_test</module>
     </modules>
     <build>
         <plugins>
