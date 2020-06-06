@@ -12,6 +12,7 @@ public class Basic {
         new Thread(() -> System.out.println(x.get())).start();
         new Thread(() -> System.out.println(x.get())).start();
         x.set(10000L);
+        x.set(2000L);
         System.out.printf("main => %d%n", x.get());
     }
 }
