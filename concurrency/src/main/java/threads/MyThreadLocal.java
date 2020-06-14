@@ -3,6 +3,7 @@ package threads;
 /**
  * ThreadLocal用法
  * @author coshaho
+ * 没有问题
  *
  */
 public class MyThreadLocal {

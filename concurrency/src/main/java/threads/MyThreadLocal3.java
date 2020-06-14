@@ -2,6 +2,9 @@ package threads;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 这个实例代码没有问题，子线程可以获取到父线程的threadParam值
+ */
 public class MyThreadLocal3 {
     static final InheritableThreadLocal<String> threadParam = new InheritableThreadLocal<>();
     public static void main(String[] args) throws InterruptedException {

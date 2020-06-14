@@ -4,11 +4,14 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 会出现问题的实例代码，出现了线程t2、t3拿到了CBA的情况
+ */
 public class MyThreadLocal4 {
     static final InheritableThreadLocal<String> threadParam = new InheritableThreadLocal<>();
     public static void main(String[] args) throws InterruptedException {
         //固定池内只有存活3个线程
-        ExecutorService execService = Executors.newFixedThreadPool(3);
+        ExecutorService execService = Executors.newFixedThreadPool(10);
         //死循环几次才能看出效果
         while (true) {
             //线程1,里面有两个子线程
