@@ -19,11 +19,11 @@ public class MyThreadLocal2 {
 //                    threadParam.remove();
             });
             execService.execute(t);
-            TimeUnit.SECONDS.sleep(1);
             Thread t2 = new Thread(()-> {
                 System.out.println("t2:" + threadParam.get());
             });
             execService.execute(t2);
+            TimeUnit.SECONDS.sleep(1);
         }
     }
 }
