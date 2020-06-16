@@ -1,4 +1,4 @@
-package threads;
+package threads.threadlocaltest;
 
 /**
  * ThreadLocal用法
