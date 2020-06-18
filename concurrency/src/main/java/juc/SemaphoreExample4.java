@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SemaphoreExample4 {
 
-    private final static int threadCount = 20;
+    private final static int threadCount = 200;
 
     public static void main(String[] args) throws Exception {
 

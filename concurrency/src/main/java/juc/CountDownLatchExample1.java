@@ -33,8 +33,7 @@ public class CountDownLatchExample1 {
     }
 
     private static void test(int threadNum) throws Exception {
-        Thread.sleep(100);
-        System.out.println(threadNum);
-        Thread.sleep(100);
+        Thread.sleep(1000);
+        System.out.println(Thread.currentThread().getName() + " = "+threadNum);
     }
 }

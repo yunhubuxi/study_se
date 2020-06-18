@@ -22,7 +22,7 @@ public class CyclicBarrierExample3 {
                 try {
                     race(threadNum);
                 } catch (Exception e) {
- System.err.println(e);
+                    System.err.println(e);
                 }
             });
         }
@@ -31,7 +31,7 @@ public class CyclicBarrierExample3 {
 
     private static void race(int threadNum) throws Exception {
         Thread.sleep(1000);
-System.out.println(threadNum + "is ready");
+        System.out.println(threadNum + "is ready");
         barrier.await();
         System.out.println(threadNum + "is continue");
     }
