@@ -1,4 +1,0 @@
-abc=spi.adaptive.impl.AbcAdaptiveExt2
-cloud=spi.adaptive.impl.SpringCloudAdaptiveExt2
-dubbo=spi.adaptive.impl.DubboAdaptiveExt2
-thrift=spi.adaptive.impl.ThriftAdaptiveExt2

@@ -1,13 +1,13 @@
-package spi.adaptive.impl;
+package adaptive.impl;
 
 import com.alibaba.dubbo.common.URL;
 import com.alibaba.dubbo.common.extension.Adaptive;
-import spi.adaptive.AdaptiveExt1;
+import adaptive.AdaptiveExt2;
 
 @Adaptive
-public class ThriftAdaptiveExt2 implements AdaptiveExt1 {
+public class DubboAdaptiveExt2 implements AdaptiveExt2 {
     @Override
     public String echo(String msg, URL url) {
-        return "thrift";
+        return "dubbo";
     }
 }

@@ -1,5 +1,0 @@
-group=spi.adaptive.impl.GroupActivateExtImpl
-value=spi.adaptive.impl.ValueActivateExtImpl
-order1=spi.adaptive.impl.OrderActivateExtImpl1
-order2=spi.adaptive.impl.OrderActivateExtImpl2
-spi.adaptive.impl.ActivateExt1Impl1

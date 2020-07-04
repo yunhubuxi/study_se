@@ -1,0 +1,4 @@
+wechat = wrapper.impl.WechatPay
+ali = wrapper.impl.AliPay
+paywrapper1=wrapper.wrapper.PayWrapper1
+paywrapper2=wrapper.wrapper.PayWrapper2

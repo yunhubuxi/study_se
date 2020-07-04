@@ -1,4 +1,4 @@
-package spi.adaptive;
+package activate;
 
 import com.alibaba.dubbo.common.extension.SPI;
 
