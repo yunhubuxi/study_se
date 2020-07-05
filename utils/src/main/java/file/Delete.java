@@ -1,3 +1,5 @@
+package file;
+
 import java.io.File;
 
 public class Delete {
