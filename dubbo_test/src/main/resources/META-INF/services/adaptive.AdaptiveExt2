@@ -1,0 +1,4 @@
+cloud=adaptive.impl.SpringCloudAdaptiveExt2
+thrift=adaptive.impl.ThriftAdaptiveExt2
+abc=adaptive.impl.AbcAdaptiveExt2
+dubbo=adaptive.impl.DubboAdaptiveExt2

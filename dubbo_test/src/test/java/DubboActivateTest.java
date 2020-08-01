@@ -1,7 +1,7 @@
 import com.alibaba.dubbo.common.URL;
 import com.alibaba.dubbo.common.extension.ExtensionLoader;
 import org.junit.Test;
-import spi.adaptive.ActivateExt1;
+import activate.ActivateExt1;
 
 import java.util.List;
 

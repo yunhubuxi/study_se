@@ -1,7 +1,7 @@
 import com.alibaba.dubbo.common.URL;
 import com.alibaba.dubbo.common.extension.ExtensionLoader;
 import org.junit.Test;
-import spi.adaptive.AdaptiveExt1;
+import adaptive.AdaptiveExt2;
 
 /**
  * 从上面的几个测试用例，可以得到下面的结论：
@@ -15,8 +15,8 @@ public class DubboAdaptiveTest {
      */
     @Test
     public void test1() {
-        ExtensionLoader<AdaptiveExt1> loader = ExtensionLoader.getExtensionLoader(AdaptiveExt1.class);
-        AdaptiveExt1 adaptiveExtension = loader.getAdaptiveExtension();
+        ExtensionLoader<AdaptiveExt2> loader = ExtensionLoader.getExtensionLoader(AdaptiveExt2.class);
+        AdaptiveExt2 adaptiveExtension = loader.getAdaptiveExtension();
         URL url = URL.valueOf("test://localhost/test");
         System.out.println(adaptiveExtension.echo("d", url));
     }
@@ -28,8 +28,8 @@ public class DubboAdaptiveTest {
      */
     @Test
     public void test2() {
-        ExtensionLoader<AdaptiveExt1> loader = ExtensionLoader.getExtensionLoader(AdaptiveExt1.class);
-        AdaptiveExt1 adaptiveExtension = loader.getAdaptiveExtension();
+        ExtensionLoader<AdaptiveExt2> loader = ExtensionLoader.getExtensionLoader(AdaptiveExt2.class);
+        AdaptiveExt2 adaptiveExtension = loader.getAdaptiveExtension();
         URL url = URL.valueOf("test://localhost/test?adaptive.ext2.test=cloud");
         System.out.println(adaptiveExtension.echo("d", url));
     }
@@ -40,8 +40,8 @@ public class DubboAdaptiveTest {
      */
     @Test
     public void test3() {
-        ExtensionLoader<AdaptiveExt1> loader = ExtensionLoader.getExtensionLoader(AdaptiveExt1.class);
-        AdaptiveExt1 adaptiveExtension = loader.getAdaptiveExtension();
+        ExtensionLoader<AdaptiveExt2> loader = ExtensionLoader.getExtensionLoader(AdaptiveExt2.class);
+        AdaptiveExt2 adaptiveExtension = loader.getAdaptiveExtension();
         URL url = URL.valueOf("test://localhost/test?adaptive.ext2.test=cloud");
         System.out.println(adaptiveExtension.echo("d", url));
     }
@@ -56,8 +56,8 @@ public class DubboAdaptiveTest {
      */
     @Test
     public void test4() {
-        ExtensionLoader<AdaptiveExt1> loader = ExtensionLoader.getExtensionLoader(AdaptiveExt1.class);
-        AdaptiveExt1 adaptiveExtension = loader.getAdaptiveExtension();
+        ExtensionLoader<AdaptiveExt2> loader = ExtensionLoader.getExtensionLoader(AdaptiveExt2.class);
+        AdaptiveExt2 adaptiveExtension = loader.getAdaptiveExtension();
         URL url = URL.valueOf("test://localhost/test?t=cloud");
         System.out.println(adaptiveExtension.echo("d", url));
     }
@@ -68,8 +68,8 @@ public class DubboAdaptiveTest {
      */
     @Test
     public void test5() {
-        ExtensionLoader<AdaptiveExt1> loader = ExtensionLoader.getExtensionLoader(AdaptiveExt1.class);
-        AdaptiveExt1 adaptiveExtension = loader.getAdaptiveExtension();
+        ExtensionLoader<AdaptiveExt2> loader = ExtensionLoader.getExtensionLoader(AdaptiveExt2.class);
+        AdaptiveExt2 adaptiveExtension = loader.getAdaptiveExtension();
         URL url = URL.valueOf("test://localhost/test?t=abc");
         System.out.println(adaptiveExtension.echo("d", url));
     }
@@ -85,8 +85,8 @@ public class DubboAdaptiveTest {
      */
     @Test
     public void test6() {
-        ExtensionLoader<AdaptiveExt1> loader = ExtensionLoader.getExtensionLoader(AdaptiveExt1.class);
-        AdaptiveExt1 adaptiveExtension = loader.getAdaptiveExtension();
+        ExtensionLoader<AdaptiveExt2> loader = ExtensionLoader.getExtensionLoader(AdaptiveExt2.class);
+        AdaptiveExt2 adaptiveExtension = loader.getAdaptiveExtension();
         URL url = URL.valueOf("test://localhost/test?t=abc");
         System.out.println(adaptiveExtension.echo("d", url));
     }
