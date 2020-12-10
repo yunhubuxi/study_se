@@ -19,7 +19,7 @@ import java.util.function.Supplier;
  */
 public class CompletableFutureDemo {
     public static void main(String[] args) throws Exception {
-        whenComplete();
+        thenApply();
 
     }
 
@@ -85,6 +85,7 @@ public class CompletableFutureDemo {
         CompletableFuture<Long> future = CompletableFuture.supplyAsync(() -> {
             long result = new Random().nextInt(100);
             System.out.println("result1="+result);
+            System.out.println(4/0);
             return result;
         }).thenApply(t -> {
             long result = t*5;
