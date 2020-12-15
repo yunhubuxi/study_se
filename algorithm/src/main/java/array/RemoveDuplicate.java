@@ -11,16 +11,12 @@ public class RemoveDuplicate {
     public static void main(String[] args) {
         int[] nums = {1, 1, 2, 4, 5, 5};
         int len = removeDuplicates(nums);
-
         for (int i = 0; i < len; i++) {
             System.out.println(nums[i]);
         }
-
-
     }
 
     public static int removeDuplicates(int[] nums) {
-
         for (int i = 1; i < nums.length - 1; i++) {
             if (nums[i] == nums[i - 1]) {
                 int temp = nums[i];
@@ -30,6 +26,4 @@ public class RemoveDuplicate {
         }
         return nums.length;
     }
-
-
 }

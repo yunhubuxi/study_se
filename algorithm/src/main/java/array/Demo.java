@@ -17,9 +17,13 @@ import java.util.Set;
  * 因为 nums[0] + nums[1] = 2 + 7 = 9
  * 所以返回 [0, 1]
  */
-public class Demo_1 {
+public class Demo {
     public static void main(String[] args) {
-        
+        int[] nums = new int[]{2, 5, 5, 3, 5, 7, 12, 15};
+        int[] temp1 = test2(nums, 9);
+        System.out.println(temp1[0] + "_" + temp1[1]);
+        int[] temp2 = test2(nums, 9);
+        System.out.println(temp1[0] + "_" + temp1[1]);
     }
 
 
@@ -32,18 +36,18 @@ public class Demo_1 {
                 }
             }
         }
-        return new int[0];
+        return new int[]{-1,-1};
     }
 
     public static int[] test2(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            int complement = target - nums[i];
-            if (map.containsKey(complement)) {
-                return new int[]{complement, nums[i]};
+            if (map.containsKey(nums[i])) {
+                return new int[]{map.get(nums[i]), i};
+            } else {
+                map.put(target - nums[i], i);
             }
-            map.put(nums[i], i);
         }
-        return new int[0];
+        return new int[]{-1,-1};
     }
 }

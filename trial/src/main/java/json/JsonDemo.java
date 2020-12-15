@@ -10,5 +10,9 @@ public class JsonDemo {
         System.out.println(bb);
         System.out.println(cc);
         System.out.println(dd);
+        String[] aaa = "aaa|bbb|ccc".split("");
+        String mm = "aaa\tsd\\fsd\nsad";
+        System.out.println(mm);
+
     }
 }
