@@ -31,7 +31,6 @@ public class MyThreadLocal7 {
                     }
                     System.out.println(s);
                 }
-                execService2.shutdown();
             });
             threadParam.remove();
             execService2.execute(() -> {
@@ -44,7 +43,6 @@ public class MyThreadLocal7 {
                     }
                     System.out.println(s);
                 }
-                execService2.shutdown();
             });
         });
         execService1.shutdown();
