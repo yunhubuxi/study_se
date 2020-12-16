@@ -9,7 +9,7 @@ package array;
 public class RemoveDuplicate {
 
     public static void main(String[] args) {
-        int[] nums = {1, 1, 2, 4, 5, 5};
+        int[] nums = {1, 1, 2, 4, 5, 5, 6};
         int len = removeDuplicates(nums);
         for (int i = 0; i < len; i++) {
             System.out.println(nums[i]);
@@ -17,13 +17,26 @@ public class RemoveDuplicate {
     }
 
     public static int removeDuplicates(int[] nums) {
-        for (int i = 1; i < nums.length - 1; i++) {
-            if (nums[i] == nums[i - 1]) {
-                int temp = nums[i];
-                nums[i] = nums[i + 1];
-                nums[i + 1] = temp;
+        int currentLength = nums.length, tag = 0, cursor;
+        while (tag < currentLength) {
+            cursor = tag + 1;
+            while (cursor < currentLength) {
+                if (nums[tag] == nums[cursor]) {
+                    removeElement(nums, cursor);
+                    currentLength--;
+                } else {
+                    cursor++;
+                }
             }
+            tag++;
         }
-        return nums.length;
+        return currentLength;
+    }
+
+    public static void removeElement(int[] nums, int index) {
+        int length = nums.length;
+        for (int i = index; i < length - 1; i++) {
+            nums[i] = nums[i + 1];
+        }
     }
 }
