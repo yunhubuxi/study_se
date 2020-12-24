@@ -14,7 +14,7 @@ public class CyclicBarrierExample1 {
 
         for (int i = 0; i < 10; i++) {
             final int threadNum = i;
-            Thread.sleep(1000);
+            // Thread.sleep(1000);
             executor.execute(() -> {
                 try {
                     race(threadNum);
@@ -28,8 +28,8 @@ public class CyclicBarrierExample1 {
 
     private static void race(int threadNum) throws Exception {
         Thread.sleep(1000);
-        System.out.println(threadNum + "is ready");
+        System.out.println(threadNum + " is ready");
         barrier.await();
-        System.out.println(threadNum + "is continue");
+        System.out.println(threadNum + " is continue");
     }
 }

@@ -30,12 +30,12 @@ public class CyclicBarrierExample2 {
 
     private static void race(int threadNum) throws Exception {
         Thread.sleep(1000);
-        System.out.println(threadNum + "is ready");
+        System.out.println(threadNum + " is ready");
         try {
             barrier.await(2000, TimeUnit.MILLISECONDS);
         } catch (Exception e) {
             System.err.println(e);
         }
-        System.out.println(threadNum + "is continue");
+        System.out.println(threadNum + " is continue");
     }
 }
