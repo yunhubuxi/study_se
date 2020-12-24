@@ -21,8 +21,9 @@ import java.util.concurrent.TimeUnit;
  * 一般我们会改成工作线程在工作队列上LIFO,而窃取其他线程的任务的时候，从队列头部取获取
  */
 public class ForkJoinTest {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         testHasResultTask();
+        testNoResultTask();
     }
 
     private static void testNoResultTask() throws InterruptedException {
