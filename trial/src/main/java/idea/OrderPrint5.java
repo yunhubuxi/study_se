@@ -1,11 +1,10 @@
 package idea;
 
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class OrderPrint2 {
+public class OrderPrint5 {
     private static Lock lock = new ReentrantLock();
     private static int count = 0;
     private static Condition A = lock.newCondition();
@@ -19,18 +18,20 @@ public class OrderPrint2 {
             lock.lock();
             try {
                 for (int i = 0; i < 10; i++) {
+                    while (count % 3 != 0) {
+                        A.await(); // 会释放lock锁
+                    }
                     System.out.print("A");
                     count++;
                     B.signal(); // 唤醒相应线程
-                    A.await();
                 }
-                B.signal();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {
                 lock.unlock();
             }
         }
+
     }
 
     static class ThreadB extends Thread {
@@ -39,16 +40,14 @@ public class OrderPrint2 {
         public void run() {
             lock.lock();
             try {
-                if (count == 0) {
-                    B.await();
-                    C.signal();
-                }
                 for (int i = 0; i < 10; i++) {
+                    while (count % 3 != 1) {
+                        B.await();
+                    }
                     System.out.print("B");
+                    count++;
                     C.signal();
-                    B.await();
                 }
-                C.signal();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {
@@ -64,16 +63,14 @@ public class OrderPrint2 {
         public void run() {
             lock.lock();
             try {
-                if (count == 0) {
-                    C.await();
-                    A.signal();
-                }
                 for (int i = 0; i < 10; i++) {
+                    while (count % 3 != 2) {
+                        C.await();
+                    }
                     System.out.println("C");
+                    count++;
                     A.signal();
-                    C.await();
                 }
-                A.signal();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {
@@ -86,8 +83,9 @@ public class OrderPrint2 {
     public static void main(String[] args) throws InterruptedException {
         new ThreadA().start();
         new ThreadB().start();
-        new ThreadC().start();
-        TimeUnit.SECONDS.sleep(5);
+        ThreadC threadC = new ThreadC();
+        threadC.start();
+        threadC.join();
         System.out.println(count);
     }
 }
