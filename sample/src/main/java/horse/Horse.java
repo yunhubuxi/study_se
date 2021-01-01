@@ -1,4 +1,4 @@
-package juc.example;
+package horse;
 
 import java.util.Random;
 import java.util.concurrent.CyclicBarrier;

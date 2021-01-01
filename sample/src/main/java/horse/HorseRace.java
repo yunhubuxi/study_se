@@ -1,4 +1,4 @@
-package juc.example;
+package horse;
 
 import java.util.ArrayList;
 import java.util.List;

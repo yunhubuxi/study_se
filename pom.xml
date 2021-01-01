@@ -21,6 +21,7 @@
         <module>utils</module>
         <module>mybatis_test</module>
         <module>junit_test</module>
+        <module>sample</module>
     </modules>
     <build>
         <plugins>
