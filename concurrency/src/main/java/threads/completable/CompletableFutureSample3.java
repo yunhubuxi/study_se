@@ -5,7 +5,7 @@ import java.util.concurrent.*;
 /**
  * RocketMQ中使用了Java8提供的CompletableFuture
  * 但是并没有使用CompletableFuture的异步功能
- * 仅仅使用了completedFuture和thenApply方法
+ * 仅仅使用了completedFuture、thenApply、complete、whenComplete等方法
  */
 public class CompletableFutureSample3 {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
@@ -16,7 +16,6 @@ public class CompletableFutureSample3 {
     }
 
     private static String test(String request) {
-        System.out.println(request);
         try {
             TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
