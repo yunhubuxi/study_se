@@ -27,12 +27,14 @@ public class OrdersMapperCustomTest {
         //创建代理对象，即获取映射器
         OrdersMapperCustom ordersMapperCustom = sqlSession.getMapper(OrdersMapperCustom.class);
         //调用mapper的方法
-        // List<Orders> list_1 = ordersMapperCustom.findOrdersAndOrderDetailResultMap();
+        List<Orders> list_1 = ordersMapperCustom.findOrdersAndOrderDetailResultMap();
+        for (Orders order : list_1) {
+            System.out.println(order);
+        }
 
         String statement = "mybatis.mapper.OrdersMapperCustom.findOrdersAndOrderDetailResultMap";
         List<Orders> list_2 = sqlSession.selectList(statement);
-        for (Orders order:
-             list_2) {
+        for (Orders order: list_2) {
             System.out.println(order);
         }
 
