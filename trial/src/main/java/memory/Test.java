@@ -2,7 +2,6 @@ package memory;
 
 import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 
-import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
