@@ -17,8 +17,7 @@ import java.util.function.Supplier;
  */
 public class CompletableFutureDemo {
     public static void main(String[] args) throws Exception {
-        thenApply();
-
+        whenComplete();
     }
 
     // 无返回值
@@ -66,13 +65,34 @@ public class CompletableFutureDemo {
             System.out.println("run end ...");
         });
 
-        future.whenComplete((t, action) -> System.out.println("执行完成！"));
+        future.whenComplete((t, action) ->
+            {
+                if (action == null) {
+                    System.out.println("执行完成！");
+                } else {
+                    System.out.println("1执行失败！" + action.getMessage());
+                }
+            }
+            );
         future.exceptionally(t -> {
-            System.out.println("执行失败！" + t.getMessage());
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("2执行失败！" + t.getMessage());
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             return null;
         });
+        future.thenRun(() -> System.out.println("aaa"));
+        future.thenRun(() -> System.out.println("ccc"));
+        future.thenRun(() -> System.out.println("bbb"));
 
-        TimeUnit.SECONDS.sleep(2);
+        TimeUnit.SECONDS.sleep(8);
     }
 
     /**
