@@ -61,7 +61,7 @@ public class CompletableFutureDemo {
     public static void whenComplete() throws Exception {
         CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.SECONDS.sleep(30);
             } catch (InterruptedException e) {
             }
             // int a = 12 / 0;
@@ -78,13 +78,13 @@ public class CompletableFutureDemo {
         });
 
         future.whenComplete((t, action) ->
-                {
-                    if (action == null) {
-                        System.out.println("执行完成！");
-                    } else {
-                        System.out.println("1执行失败！" + action.getMessage());
-                    }
+            {
+                if (action == null) {
+                    System.out.println("执行完成！");
+                } else {
+                    System.out.println("1执行失败！" + action.getMessage());
                 }
+            }
         );
         future.exceptionally(t -> {
             try {
@@ -101,7 +101,14 @@ public class CompletableFutureDemo {
             return null;
         });
         future.thenRun(() -> System.out.println("aaa"));
-        future.thenRun(() -> System.out.println("ccc"));
+        future.thenRunAsync(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("ccc");
+        }, executorService);
         future.thenRun(() -> System.out.println("bbb"));
 
         TimeUnit.SECONDS.sleep(8);

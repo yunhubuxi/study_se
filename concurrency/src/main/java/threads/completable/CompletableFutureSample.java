@@ -51,8 +51,12 @@ public class CompletableFutureSample {
         // 当所有的 future 完成时,新的 future 同时完成
         // 当某个方法出现了异常时,新 future 会在所有 future 完成的时候完成,并且包含一个异常.
         CompletableFuture<Void> voidCompletableFuture = CompletableFuture.allOf(future1, future2, future3, future4, future5);
+        voidCompletableFuture.exceptionally((ex) -> {
+            System.out.println(ex.getMessage());
+            return null;
+        });
         try {
-            voidCompletableFuture.get(2, TimeUnit.SECONDS);
+            voidCompletableFuture.get(10, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
