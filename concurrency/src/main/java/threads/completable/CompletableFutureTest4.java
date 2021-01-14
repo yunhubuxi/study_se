@@ -7,8 +7,93 @@ import java.util.concurrent.TimeUnit;
 
 public class CompletableFutureTest4 {
     public static void main(String[] args) throws Exception {
-        test2();
+        test5();
         TimeUnit.SECONDS.sleep(50);
+    }
+
+    static void test5() {
+        CompletableFuture<String> main = CompletableFuture.supplyAsync(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(Thread.currentThread() + " hello world main  " + System.currentTimeMillis());
+            return "result main";
+        });
+        CompletableFuture<String> f1 = main.thenApplyAsync(r -> {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(Thread.currentThread() + " hello world f1  " + System.currentTimeMillis());
+            return "f1";
+        });
+        CompletableFuture<String> f2 = main.thenApplyAsync(r -> {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(Thread.currentThread() + " hello world f2  " + System.currentTimeMillis());
+            return "f2";
+        });
+
+        CompletableFuture<String> f11 = f1.thenApply(r -> {
+            System.err.println(r);
+            try {
+                TimeUnit.SECONDS.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(Thread.currentThread() + " hello world f11  " + System.currentTimeMillis());
+            return "f11";
+        });
+
+        CompletableFuture<String> f12 = f1.thenApply(r -> {
+            System.err.println(r);
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(Thread.currentThread() + " hello world f12  " + System.currentTimeMillis());
+            return "f12";
+        });
+
+        CompletableFuture<String> f13 = f1.thenApply(r -> {
+            System.err.println(r);
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(Thread.currentThread() + " hello world f13  " + System.currentTimeMillis());
+            return "f13";
+        });
+
+        CompletableFuture<String> f21 = f2.thenApply(r -> {
+            System.err.println(r);
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(Thread.currentThread() + " hello world f21  " + System.currentTimeMillis());
+            return "f21";
+        });
+
+        CompletableFuture<String> f22 = f2.thenApply(r -> {
+            System.err.println(r);
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(Thread.currentThread() + " hello world f22  " + System.currentTimeMillis());
+            return "f22";
+        });
     }
 
     static void test4() {
