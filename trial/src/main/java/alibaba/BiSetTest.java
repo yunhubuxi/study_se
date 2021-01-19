@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 public class BiSetTest {
     public static void main(String[] args)
