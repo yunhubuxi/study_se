@@ -13,7 +13,7 @@ public class MyThreadLocal2 {
 
     public static void main(String[] args) throws InterruptedException{
         //固定池内只有存活3个线程
-        ExecutorService execService = Executors.newFixedThreadPool(6);
+        ExecutorService execService = Executors.newFixedThreadPool(5);
         //死循环几次才能看出效果
         while (true) {
             Thread t = new Thread(()->{
