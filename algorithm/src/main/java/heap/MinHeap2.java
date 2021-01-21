@@ -30,16 +30,19 @@ public class MinHeap2 {
         int smallest = i;
 
         // 存在左结点，且左结点的值小于根结点的值
-        if (l < data.length && data[l] < data[i])
+        if (l < data.length && data[l] < data[i]) {
             smallest = l;
+        }
 
         // 存在右结点，且右结点的值小于以上比较的较小值
-        if (r < data.length && data[r] < data[smallest])
+        if (r < data.length && data[r] < data[smallest]) {
             smallest = r;
+        }
 
         // 左右结点的值都大于根节点，直接return，不做任何操作
-        if (i == smallest)
+        if (i == smallest) {
             return;
+        }
 
         // 交换根节点和左右结点中最小的那个值，把根节点的值替换下去
         swap(i, smallest);
