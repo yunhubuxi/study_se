@@ -13,8 +13,9 @@ public class MinHeap<AnyType extends Comparable<? super AnyType>> {
         currentSize = items.length;
         array = (AnyType[]) new Comparable[currentSize + 1];
         int i = 1;
-        for (AnyType item : items)
+        for (AnyType item : items) {
             array[i++] = item;
+        }
         buildHeap();
     }
 
@@ -28,13 +29,14 @@ public class MinHeap<AnyType extends Comparable<? super AnyType>> {
         for (; position * 2 <= currentSize; position = child) {
             child = 2 * position;
             if (child != currentSize
-                    && array[child + 1].compareTo(array[child]) < 0)
+                    && array[child + 1].compareTo(array[child]) < 0) {
                 child++;
-            if (array[child].compareTo(temp) < 0)
+            }
+            if (array[child].compareTo(temp) < 0) {
                 array[position] = array[child];
-
-            else
+            } else {
                 break;
+            }
         }
         array[position] = temp;
     }
@@ -44,13 +46,15 @@ public class MinHeap<AnyType extends Comparable<? super AnyType>> {
      * 说明：下滤的顺序很关键 从中间开始不断向上依次下滤
      */
     private void buildHeap() {
-        for (int i = currentSize / 2; i > 0; i--)
+        for (int i = currentSize / 2; i > 0; i--) {
             percolateDown(i);
+        }
     }
 
     public void insert(AnyType x) {
-        if (currentSize >= array.length - 1)
+        if (currentSize >= array.length - 1) {
             enlargeArray(array.length * 2 + 1);
+        }
         int hole = ++currentSize;
         while (hole > 1 && x.compareTo(array[hole / 2]) < 0) {
             array[hole] = array[hole / 2];
@@ -62,8 +66,9 @@ public class MinHeap<AnyType extends Comparable<? super AnyType>> {
     private void enlargeArray(int capacity) {
         AnyType[] oldArr = array;
         AnyType[] newArr = (AnyType[]) new Comparable[capacity];
-        for (int i = 1; i < array.length; i++)
+        for (int i = 1; i < array.length; i++) {
             newArr[i] = oldArr[i];
+        }
         array = newArr;
     }
 
@@ -82,10 +87,12 @@ public class MinHeap<AnyType extends Comparable<? super AnyType>> {
 
     }
 
+    @Override
     public String toString() {
         StringBuffer sb = new StringBuffer();
-        for (int i = 1; i <= currentSize; i++)
+        for (int i = 1; i <= currentSize; i++) {
             sb.append(array[i] + " ");
+        }
         return new String(sb);
     }
 }

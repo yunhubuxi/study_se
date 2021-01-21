@@ -8,8 +8,9 @@ public class MaxHeap<AnyType extends Comparable<? super AnyType>> {
         currentSize = arr.length;
         array = (AnyType[]) new Comparable[currentSize + 1];
         int i = 1;
-        for (int j = 0; j < arr.length; j++)
+        for (int j = 0; j < arr.length; j++) {
             array[i++] = arr[j];
+        }
         buildHeap();
     }
 
@@ -18,8 +19,9 @@ public class MaxHeap<AnyType extends Comparable<? super AnyType>> {
      * 说明：从中间开始到结束 不断上滤
      */
     private void buildHeap() {
-        for (int i = currentSize / 2; i <= currentSize; i++)
+        for (int i = currentSize / 2; i <= currentSize; i++) {
             percolateUp(i);
+        }
     }
 
     private void percolateUp(int position) {
@@ -28,8 +30,9 @@ public class MaxHeap<AnyType extends Comparable<? super AnyType>> {
             if (array[position / 2].compareTo(temp) < 0) {
                 array[position] = array[position / 2];
                 position /= 2;
-            } else
+            } else {
                 break;
+            }
         }
         array[position] = temp;
     }
@@ -45,12 +48,14 @@ public class MaxHeap<AnyType extends Comparable<? super AnyType>> {
         int child;
         while (position * 2 <= currentSize) {
             child = 2 * position;
-            if (child != currentSize && array[child].compareTo(array[child + 1]) < 0)
+            if (child != currentSize && array[child].compareTo(array[child + 1]) < 0) {
                 child++;
-            if (array[child].compareTo(temp) > 0)
+            }
+            if (array[child].compareTo(temp) > 0) {
                 array[position] = array[child];
-            else
+            } else {
                 break;
+            }
             position = child;
         }
         array[position] = temp;
@@ -67,11 +72,13 @@ public class MaxHeap<AnyType extends Comparable<? super AnyType>> {
     private void enlargeArray(int capacity) {
         AnyType[] oldArr = array;
         AnyType[] newArr = (AnyType[]) new Comparable[capacity];
-        for (int i = 1; i < array.length; i++)
+        for (int i = 1; i < array.length; i++) {
             newArr[i] = oldArr[i];
+        }
         array = newArr;
     }
 
+    @Override
     public String toString() {
         StringBuffer sb = new StringBuffer();
         for (int i = 1; i <= currentSize; i++)
