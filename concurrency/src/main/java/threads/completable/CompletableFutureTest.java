@@ -1,24 +1,11 @@
 package threads.completable;
 
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
 
 public class CompletableFutureTest {
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
-        CompletableFuture<Object> objectCompletableFuture1 = CompletableFuture.supplyAsync(() -> {
-            try {
-                System.out.println("11111111111");
-                TimeUnit.SECONDS.sleep(1);
-                return "1111";
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            return "bbb";
-        });
-        TimeUnit.SECONDS.sleep(3);
+    public static void main(String[] args) throws Exception {
+        test1();
 
-        System.out.println(objectCompletableFuture1.get());
     }
 
     public static void test1() throws Exception{
