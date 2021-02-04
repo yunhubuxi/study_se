@@ -13,7 +13,8 @@ import java.util.TreeMap;
 public class ConsistentHashLoadBalance {
 
     private TreeMap<Long, String> virtualNodes = new TreeMap<>();
-    private LinkedList<String> nodes;        //每个真实节点对应的虚拟节点数
+    private LinkedList<String> nodes;
+    //每个真实节点对应的虚拟节点数
     private final int replicCnt;
 
     public ConsistentHashLoadBalance(LinkedList<String> nodes, int replicCnt) {
