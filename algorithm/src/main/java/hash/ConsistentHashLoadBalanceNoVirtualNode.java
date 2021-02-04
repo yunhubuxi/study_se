@@ -96,5 +96,7 @@ public class ConsistentHashLoadBalanceNoVirtualNode {
         String[] nodes = new String[]{"192.168.2.1:8080", "192.168.2.2:8080", "192.168.2.3:8080", "192.168.2.4:8080"};
         ConsistentHashLoadBalanceNoVirtualNode consistentHash = new ConsistentHashLoadBalanceNoVirtualNode(nodes);
         consistentHash.printTreeNode();
+        System.out.println("========================");
+        System.out.println(consistentHash.selectNode("qweqw"));
     }
 }
