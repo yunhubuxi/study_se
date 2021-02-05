@@ -1,8 +1,7 @@
-package threads.completable;
+package thread.completable;
 
 
 import java.util.concurrent.*;
-import java.util.function.Supplier;
 
 /**
  * 方法2和方法3有点看不懂

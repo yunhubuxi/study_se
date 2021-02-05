@@ -1,4 +1,4 @@
-package threads.schedule;
+package thread.schedule;
 
 
 import java.time.LocalTime;

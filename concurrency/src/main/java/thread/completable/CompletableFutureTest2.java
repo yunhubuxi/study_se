@@ -1,4 +1,4 @@
-package threads.completable;
+package thread.completable;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;

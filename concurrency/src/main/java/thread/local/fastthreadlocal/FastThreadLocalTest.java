@@ -1,4 +1,4 @@
-package threads.threadlocaltest.fastthreadlocal;
+package thread.local.fastthreadlocal;
 
 import io.netty.util.concurrent.FastThreadLocal;
 import io.netty.util.concurrent.FastThreadLocalThread;

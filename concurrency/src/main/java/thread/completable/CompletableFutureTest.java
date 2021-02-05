@@ -1,4 +1,4 @@
-package threads.completable;
+package thread.completable;
 
 import java.util.concurrent.CompletableFuture;
 
