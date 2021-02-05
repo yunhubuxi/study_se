@@ -1,7 +1,11 @@
 # juc
-##Semaphore
-`执行 release 操作的线程不一定非得是执行了 acquire 方法的线程`
+## Semaphore
+    注意：执行 release 操作的线程不一定非得是执行了 acquire 方法的线程
+
 acquire：获取一个许可，可指定数量
+
 release：释放一个许可，可指定数量
+
 availablePermits：获取可用许可数量
+
 drainPermits：排空可用许可数量，返回可用数量值
