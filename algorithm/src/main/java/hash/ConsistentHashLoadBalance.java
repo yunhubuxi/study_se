@@ -134,5 +134,7 @@ public class ConsistentHashLoadBalance {
         nodes.add("192.168.2.4:8080");
         ConsistentHashLoadBalance consistentHash = new ConsistentHashLoadBalance(nodes, 160);
         consistentHash.printTreeNode();
+        System.out.println("===============================");
+        System.out.println(consistentHash.selectNode("qweqw3"));
     }
 }
