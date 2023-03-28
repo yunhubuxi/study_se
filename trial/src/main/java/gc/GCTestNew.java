@@ -40,6 +40,41 @@ import java.util.concurrent.TimeUnit;
  * 安装示例代码运行程序，如果使用默认的垃圾回收期，那么内存是有可能到达百分之九十的，但是dump堆的时候，获取不到任何有用信息，因为占用内存的主要是垃圾回收器
  * 如果使用G1垃圾回收器，那么内存不会飙到百分之就是，最多五十多。G1适用于超过6个G的说法说不对的，小内存也能很好的工作
  * @date 2021年07月24日 14:52
+ * -Xmx2500M
+ * -Xms2500M
+ * -Xmn1000M
+ * -XX:MetaspaceSize=512m
+ * -XX:MaxMetaspaceSize=512m
+ * -Xss256K
+ * -XX:+DisableExplicitGC
+ * -XX:SurvivorRatio=8
+ * -XX:+UseConcMarkSweepGC
+ * -XX:+UseParNewGC
+ * -XX:+CMSParallelRemarkEnabled
+ * -XX:+UseCMSCompactAtFullCollection
+ * -XX:CMSFullGCsBeforeCompaction=0
+ * -XX:+CMSClassUnloadingEnabled
+ * -XX:LargePageSizeInBytes=128M
+ * -XX:+UseFastAccessorMethods
+ * -XX:+UseCMSInitiatingOccupancyOnly
+ * -XX:CMSInitiatingOccupancyFraction=70
+ * -XX:SoftRefLRUPolicyMSPerMB=1000
+ * -XX:+TraceClassLoading
+ * -XX:+TraceClassUnloading
+ * -XX:+PrintClassHistogram
+ * -XX:+PrintGCDetails
+ * -XX:+PrintGCTimeStamps
+ * -XX:+PrintHeapAtGC
+ * -Xloggc:/export/Logs/gcDetail.log
+ * -XX:+HeapDumpOnOutOfMemoryError
+ * -XX:HeapDumpPath=/export/Logs/gc.hprof
+ * -Dsun.net.client.defaultConnectTimeout=60000
+ * -Dsun.net.client.defaultReadTimeout=60000
+ * -Djmagick.systemclassloader=no
+ * -Dnetworkaddress.cache.ttl=300
+ * -Dsun.net.inetaddr.ttl=300
+ * -DumpCenter=config-th.ump.jd.local
+ * -Duser.timezone=GMT+07"
  */
 public class GCTestNew {
     public static void main(String[] args) throws Exception {
